@@ -1,6 +1,7 @@
 <template>
     <div>
         <el-input-number
+                class="el-components-input-number"
                 :scope="scope"
                 :value="value"
                 :key="keys"
@@ -49,6 +50,11 @@
     }
 </script>
 
-<style scoped>
-
+<style>
+.el-components-input-number{
+    width: 100%!important;
+}
+.el-components-input-number .el-input__inner{
+        text-align: left;
+    }
 </style>

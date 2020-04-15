@@ -67,7 +67,7 @@
                             placeholder="请选择"
                             @change="getCurrentRow(scope,scope.$index,scope.row)"
                     >
-                        <el-option v-for="items in item.attributes.options" :label="items.label" :value="items.value">
+                        <el-option v-for="(items,i) in item.attributes.options" :key="i" :label="items.label" :value="items.value">
                             {{items.label}}
                         </el-option>
                     </el-select>
@@ -126,24 +126,9 @@
 </template>
 
 <script>
-    // import StringInput from '@/components/Input/StringInput'
-    // import NumberInput from '@/components/Input/NumberInput'
-    // import TextareaInput from '@/components/Input/TextareaInput'
-    // import GroupSelect from '@/components/Select/GroupSelect'
-    // import GroupRadio from '@/components/Radio/GroupRadio'
-    // import GroupCheckbox from '@/components/Checkbox/GroupCheckbox'
-    // import GroupDatePicker from '@/components/DatePicker/GroupDatePicker'
-
     export default {
         name: "TableText",
         // components: {
-        //     StringInput,
-        //     NumberInput,
-        //     TextareaInput,
-        //     GroupSelect,
-        //     GroupRadio,
-        //     GroupCheckbox,
-        //     GroupDatePicker
         // },
         props: {
             gridTable: {
@@ -219,11 +204,7 @@
             //多选返回表格数据
             handleSelectionChange(val) {
                 console.log(val)
-                let gridTable = this._props.gridTable;
                 this._props.multipleSelection = val;
-                // gridTable.forEach(function(item,i){
-                //
-                // });
                 this.$emit('getTableData', this._props)
             },
             //切换每页显示数量

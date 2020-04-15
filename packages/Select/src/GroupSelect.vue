@@ -1,6 +1,7 @@
 <template>
     <div>
         <el-select
+                class="el-components-select"
                 :scope="scope"
                 :value="value"
                 :key="keys"
@@ -61,5 +62,7 @@
 </script>
 
 <style scoped>
-
+.el-components-select{
+    width: 100%!important;
+}
 </style>

@@ -1,6 +1,7 @@
 <template>
     <div>
         <el-radio-group
+                class="el-components-radio-group"
                 :scope="scope"
                 v-model="radioValue"
                 @change="getCurrentGroupRadioData"
@@ -71,5 +72,8 @@
         height: 32px;
         line-height: 32px;
         padding-right: 16px;
+    }
+    .el-components-radio-group{
+        width: 100%;
     }
 </style>

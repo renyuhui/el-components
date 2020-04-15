@@ -181,7 +181,7 @@
     import TextareaInput from '../../Input/src/TextareaInput'
     import GroupSelect from '../../Select/src/GroupSelect'
     import GroupRadio from '../../Radio/src/GroupRadio'
-    import GroupCheckbox from '../../Checkbox/src/GroupCheckbox'
+    // import GroupCheckbox from '../../Checkbox/src/GroupCheckbox'
     import GroupDatePicker from '../../DatePicker/src/GroupDatePicker'
 
     export default {
@@ -192,7 +192,7 @@
             TextareaInput,
             GroupSelect,
             GroupRadio,
-            GroupCheckbox,
+            // GroupCheckbox,
             GroupDatePicker
         },
         props: {
@@ -295,7 +295,7 @@
             //获取StringInput数据
             getStringInputData(data) {
                 console.log({...data})
-                let {scope,value,keys,attributes} = data;
+                let {scope,value} = data;
                 let props = this._props;
                 props.gridData.forEach(function (item, i) {
                     if (i == scope.$index) {
@@ -308,7 +308,7 @@
             //获取NumberInput数据
             getNumberInputData(data) {
                 console.log({...data})
-                let {scope,value,keys,attributes} = data;
+                let {scope,value} = data;
                 let props = this._props;
                 props.gridData.forEach(function (item, i) {
                     if (i == scope.$index) {
@@ -320,7 +320,7 @@
             //获取TextareaInput数据
             getTextareaInputData(data) {
                 console.log({...data})
-                let {scope,value,keys,attributes} = data;
+                let {scope,value} = data;
                 let props = this._props;
                 props.gridData.forEach(function (item, i) {
                     if (i == scope.$index) {
@@ -332,7 +332,7 @@
             //获取Select数据
             getGroupSelectData(data) {
                 console.log({...data})
-                let {scope,value,keys,attributes} = data;
+                let {scope,value} = data;
                 let props = this._props;
                 props.gridData.forEach(function (item, i) {
                     if (i == scope.$index) {
@@ -344,7 +344,7 @@
             //获取Radio数据
             getGroupRadioData(data) {
                 console.log({...data})
-                let {scope,value,keys,attributes} = data;
+                let {scope,value} = data;
                 let props = this._props;
                 props.gridData.forEach(function (item, i) {
                     if (i == scope.$index) {
@@ -356,7 +356,7 @@
             //获取Checkbox数据
             getGroupCheckboxData(data) {
                 console.log({...data})
-                let {scope,value,keys,attributes} = data;
+                let {scope,value} = data;
                 let props = this._props;
                 props.gridData.forEach(function (item, i) {
                     if (i == scope.$index) {
@@ -368,7 +368,7 @@
             },
             getGroupDatePickerData(data) {
                 console.log({...data})
-                let {scope,value,keys,attributes} = data;
+                let {scope,value} = data;
                 let props = this._props;
                 props.gridData.forEach(function (item, i) {
                     if (i == scope.$index) {

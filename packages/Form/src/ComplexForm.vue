@@ -28,6 +28,7 @@
                         :md="item.rowSpan ? item.rowSpan[2] ? item.rowSpan[2] : 24 : 24"
                         :lg="item.rowSpan ? item.rowSpan[3] ? item.rowSpan[3] : 24 : 24"
                         :xl="item.rowSpan ? item.rowSpan[4] ? item.rowSpan[4] : 24 : 24"
+                        :key="i"
 
                 >
                     <el-form-item
@@ -40,7 +41,7 @@
                             :inline-messag="item.inlineMessage ? item.inlineMessage : false"
                             :size="item.size ? item.size : 'small'"
                     >
-                        <template v-if="item.type === 'stringInput'" scope="scope">
+                        <template v-if="item.type === 'stringInput'">
                             <string-input
                                     :value="item.value"
                                     :keys="i"
@@ -48,7 +49,7 @@
                                     @getStringInputData="getStringInputData"
                             ></string-input>
                         </template>
-                        <template v-else-if="item.type === 'numberInput'" scope="scope">
+                        <template v-else-if="item.type === 'numberInput'">
                             <number-input
                                     :value="item.value"
                                     :keys="i"
@@ -56,7 +57,7 @@
                                     @getNumberInputData="getNumberInputData"
                             ></number-input>
                         </template>
-                        <template v-else-if="item.type === 'textareaInput'" scope="scope">
+                        <template v-else-if="item.type === 'textareaInput'">
                             <textarea-input
                                     :value="item.value"
                                     :keys="i"
@@ -64,7 +65,7 @@
                                     @getTextareaInputData="getTextareaInputData"
                             ></textarea-input>
                         </template>
-                        <template v-else-if="item.type === 'select'" scope="scope">
+                        <template v-else-if="item.type === 'select'">
                             <group-select
                                     :value="item.value"
                                     :keys="i"
@@ -72,7 +73,7 @@
                                     @getGroupSelectData="getGroupSelectData"
                             ></group-select>
                         </template>
-                        <template v-else-if="item.type === 'radio'" scope="scope">
+                        <template v-else-if="item.type === 'radio'">
                             <group-radio
                                     :value="item.value"
                                     :keys="i"
@@ -80,7 +81,7 @@
                                     @getGroupRadioData="getGroupRadioData"
                             ></group-radio>
                         </template>
-                        <template v-else-if="item.type === 'checkbox'" scope="scope">
+                        <template v-else-if="item.type === 'checkbox'">
                             <group-checkbox
                                     :value="item.value"
                                     :keys="i"
@@ -88,7 +89,7 @@
                                     @getGroupCheckboxData="getGroupCheckboxData"
                             ></group-checkbox>
                         </template>
-                        <template v-else-if="item.type === 'datePicker'" scope="scope">
+                        <template v-else-if="item.type === 'datePicker'">
                             <group-date-picker
                                     :value="item.value"
                                     :keys="i"
@@ -154,7 +155,7 @@
     import GroupSelect from '../../Select/src/GroupSelect'
     import GroupRadio from '../../Radio/src/GroupRadio'
     import GroupCheckbox from '../../Checkbox/src/GroupCheckbox'
-    import GroupDatePicker from '@../../DatePicker/src/GroupDatePicker'
+    import GroupDatePicker from '../../DatePicker/src/GroupDatePicker'
 
     export default {
         name: "ComplexForm",

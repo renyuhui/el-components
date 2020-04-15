@@ -1,6 +1,7 @@
 <template>
     <div>
         <el-date-picker
+                class="el-components-date-picker"
                 v-model="dateValue"
                 :type="attributes.date ? attributes.type : 'date'"
                 :readonly="attributes.readonly ? attributes.readonly : false"
@@ -38,9 +39,10 @@
             }
         },
         props: {
+            scope: null,
             value: null,
             keys: null,
-            attributes: null
+            attributes: null,
         },
         created() {
 
@@ -50,6 +52,7 @@
             getCurrentGroupDatePickerData(data) {
                 console.log(data);
                 let newData = {
+                    scope: this._props.scope,
                     value: data,
                     keys: this._props.keys,
                     itemAttributes: this._props.attributes
@@ -59,7 +62,10 @@
         }
     }
 </script>
-
 <style scoped>
-
+    .el-components-date-picker{
+        width: 100%!important;
+    }
 </style>
+
+
